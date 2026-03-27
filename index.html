@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width, inital-scale=1.0" />
+    <title>Help Desk Ticket System</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="container">
+        <header class="hero">
+            <h1>Help Desk Ticket System</h1>
+            <p>Create, track, and resolve support tickets</p>
+        </header>
+
+        <section class="dashboard">
+            <div class="dashboard-card">
+                <h3 id="totalTickets">0</h3>
+                <p>Total Tickets</p>
+            </div>
+            <div class="dashboard-card">
+                <h3 id="openTickets">0</h3>
+                <p>Open Tickets</p>
+            </div>
+            <div class="dashborad-card">
+                <h3 id="resolvedTickets">0</h3>
+                <p>Resolved Tickets</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Create Ticket</h2>
+            <form id="ticketForm" class="ticket-form">
+                <div class="form-group">
+                    <label for="userName">Name</label>
+                    <input type="text" id="userName" name="userName" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select category</option>
+                        <option value="Password Reset">Password Reset</option>
+                        <option value="Network Issue">Network Issue</option>
+                        <option value="Software Issue">Software Issue</option>
+                        <option value="Hardware Issue">Hardware Issue</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="issue">Issue</label>
+                    <textarea id="issue" name="issue" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority" required>
+                        <option value="">Select priority</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <button type="submit">Submit Ticket</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="tickets-header">
+                <h2>Open Tickets</h2>
+                <div class="tickets-controls">
+                    <input type="text" id="searchInput" placeholder="Search tickets..." />
+                    <select id="filterStatus">
+                        <option value="All">All Tickets</option>
+                        <option value="Open">Open</option>
+                        <option value="Resolved">Resolved</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="ticketList" class="ticket-list"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
